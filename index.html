@@ -30,10 +30,12 @@
   .player-card.last  .player-score { color: #ef5350; }
   .score-label { font-size: 10px; color: #7a9bbf; margin-top: 1px; }
   .match-block { background: #0f1923; border: 1px solid #243447; border-radius: 12px; padding: 11px 12px; margin-bottom: 8px; }
+  .match-block.pending { border-color: #f5c51866; }
   .match-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
   .match-date { font-size: 10px; color: #7a9bbf; display: block; margin-bottom: 1px; }
   .match-title { font-size: 13px; font-weight: 700; color: #fff; }
   .badge { background: #1e3a52; border-radius: 7px; padding: 3px 10px; font-size: 14px; font-weight: 900; color: #4fc3f7; white-space: nowrap; flex-shrink: 0; margin-left: 8px; }
+  .badge.pending { background: #2a2200; color: #f5c518; font-size: 11px; padding: 4px 10px; }
   .bets-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px; }
   .bet-item { display: flex; align-items: center; gap: 6px; background: #1a2634; border-radius: 7px; padding: 6px 8px; }
   .bet-name { font-size: 12px; font-weight: 700; color: #7a9bbf; min-width: 26px; }
@@ -44,6 +46,8 @@
   .hit-1 .bet-val, .hit-1 .bet-pts { color: #ffb300; }
   .miss  .bet-val, .miss  .bet-pts  { color: #ef5350; }
   .none  .bet-val, .none  .bet-pts  { color: #3a4f62; }
+  .pend  .bet-val { color: #f5c518; }
+  .pend  .bet-pts { color: #f5c51888; }
   .legend { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
   .legend-item { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #7a9bbf; }
   .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
@@ -69,6 +73,22 @@
     <div class="player-card third"><div class="rank">🥉</div><div class="player-name">영민</div><div class="player-score">40</div><div class="score-label">점</div></div>
     <div class="player-card third"><div class="rank">🥉</div><div class="player-name">규리</div><div class="player-score">40</div><div class="score-label">점</div></div>
     <div class="player-card last"><div class="rank">💀</div><div class="player-name">정은</div><div class="player-score">20</div><div class="score-label">점</div></div>
+  </div>
+
+  <!-- 네덜란드 vs 스웨덴 (배팅중) -->
+  <div class="match-block pending">
+    <div class="match-header">
+      <div><span class="match-date">06.20</span><div class="match-title">🇳🇱 네덜란드 vs 스웨덴 🇸🇪</div></div>
+      <span class="badge pending">🔥 배팅중</span>
+    </div>
+    <div class="bets-grid">
+      <div class="bet-item pend"><span class="bet-name">대호</span><span class="bet-val">네 1:0</span><span class="bet-pts">?</span></div>
+      <div class="bet-item pend"><span class="bet-name">준형</span><span class="bet-val">네 2:1</span><span class="bet-pts">?</span></div>
+      <div class="bet-item pend"><span class="bet-name">여경</span><span class="bet-val">네 2:1</span><span class="bet-pts">?</span></div>
+      <div class="bet-item pend"><span class="bet-name">규리</span><span class="bet-val">네 2:0</span><span class="bet-pts">?</span></div>
+      <div class="bet-item pend"><span class="bet-name">정은</span><span class="bet-val">네 2:1</span><span class="bet-pts">?</span></div>
+      <div class="bet-item pend"><span class="bet-name">영민</span><span class="bet-val">네 2:0</span><span class="bet-pts">?</span></div>
+    </div>
   </div>
 
   <!-- 튀르키예 vs 파라과이 -->
@@ -172,6 +192,7 @@
     <div class="legend-item"><span class="dot" style="background:#8bc34a"></span>득실차 +20</div>
     <div class="legend-item"><span class="dot" style="background:#ffb300"></span>승패 +10</div>
     <div class="legend-item"><span class="dot" style="background:#ef5350"></span>미적중</div>
+    <div class="legend-item"><span class="dot" style="background:#f5c518"></span>배팅중</div>
     <div class="legend-item"><span class="dot" style="background:#3a4f62"></span>미참여</div>
   </div>
 
